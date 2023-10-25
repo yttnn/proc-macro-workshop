@@ -9,3 +9,5 @@
   - トークン列は`TokenStream`,マクロの仕事をこなすのが`derive`関数
 - `syn`crateは、`TokenStream`を受け、ASTとして扱えるようにするもの
 - `quote`crateは、`syn`の構造から、`TokenStream`にするもの
+- dependenciesに加筆
+  - `extra-traits` Debug traitを使うために必要だった
