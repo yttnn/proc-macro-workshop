@@ -4,3 +4,8 @@
 - 特になにかするテストではないので、空のTokenStreamを返せばOK
   - `lib.rs`に実装
 - `syn::DeriveInput`のDOCを見る
+### 02-create-builder
+- マクロの仕事は、「トークン列を受け取り、必要な変更を加えて、変更後のトークン列を返すこと」
+  - トークン列は`TokenStream`,マクロの仕事をこなすのが`derive`関数
+- `syn`crateは、`TokenStream`を受け、ASTとして扱えるようにするもの
+- `quote`crateは、`syn`の構造から、`TokenStream`にするもの
