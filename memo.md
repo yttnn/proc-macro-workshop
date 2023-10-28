@@ -11,3 +11,4 @@
 - `quote`crateは、`syn`の構造から、`TokenStream`にするもの
 - dependenciesに加筆
   - `extra-traits` Debug traitを使うために必要だった
+- https://github.com/realth000/proc-macro-workshop 参考にさせて頂いた
