@@ -12,3 +12,11 @@
 - dependenciesに加筆
   - `extra-traits` Debug traitを使うために必要だった
 - https://github.com/realth000/proc-macro-workshop 参考にさせて頂いた
+### 04-call-build
+- 値が正しいかチェックするのは、変数がOptionのため、noneかを見れば良さそう
+- Box ...?
+  - https://doc.rust-jp.rs/rust-by-example-ja/error/multiple_error_types/boxing_errors.html
+  - 関数内で複数種類のエラーが発生する可能性があるときに取る手段の一つ
+- Rustのreturn時のセミコロン省略は最後のみ、ということを知らず、盛大にハマる
+- newで書けないのかな、とも思ったが、公式DOCには「From」を介して、とあるので使わないのかなと思った
+- もっときれいに書けそう。他の人の回答も見たい。

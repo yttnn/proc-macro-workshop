@@ -32,6 +32,27 @@ pub fn derive(input: TokenStream) -> TokenStream {
         }
 
         impl #builder_ident {
+            pub fn build(&mut self) -> Result<#ident, std::boxed::Box<dyn std::error::Error>> {
+                if self.executable.is_none() {
+                    return Err(Box::<dyn std::error::Error>::from("executable is none"));
+                }
+                if self.args.is_none() {
+                    return Err(Box::<dyn std::error::Error>::from("args is none"));
+                }
+                if self.env.is_none() {
+                    return Err(Box::<dyn std::error::Error>::from("env is none"));
+                }
+                if self.current_dir.is_none() {
+                    return Err(Box::<dyn std::error::Error>::from("current_dir is none"));
+                }
+                Ok(#ident {
+                    executable: self.executable.clone().unwrap(),
+                    args: self.args.clone().unwrap(),
+                    env: self.env.clone().unwrap(),
+                    current_dir: self.current_dir.clone().unwrap(),
+                })
+            }
+
             fn executable(&mut self, executable: String) -> &mut Self {
                 self.executable = Some(executable);
                 self
