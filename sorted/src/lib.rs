@@ -11,11 +11,17 @@ pub fn sorted(args: TokenStream, input: TokenStream) -> TokenStream {
     let item = parse_macro_input!(input as Item);
     eprintln!("item : {:#?}", Span::call_site());
 
-    if let Item::Enum(_values) = item {
+    // if let Item::Enum(_values) = item {
 
-    } else {
-        // compile error
+    // } else {
+    //     // compile error
+    //     return Error::new(proc_macro2::Span::call_site(), "expected enum or match expression").into_compile_error().into();
+    // }
+
+    let Item::Enum(_values) = item else {
         return Error::new(proc_macro2::Span::call_site(), "expected enum or match expression").into_compile_error().into();
-    }
+    };
+
+
     TokenStream::new()
 }
