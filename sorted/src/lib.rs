@@ -25,7 +25,8 @@ pub fn sorted(args: TokenStream, input: TokenStream) -> TokenStream {
     variant_idents_sorted.sort();
 
     for (original, sorted) in variant_idents.iter()
-                                        .zip(variant_idents_sorted.iter()) {
+                                        .zip(variant_idents_sorted.iter())
+    {
         if original != sorted {
             return Error::new(sorted.span(), format!("{} should sort before {}", sorted, original))
             .into_compile_error().into();
